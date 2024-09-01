@@ -8,11 +8,11 @@ nltk.download('stopwords')
 from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
-
+tokenizer = PunktSentenceTokenizer()
 
 def transform_text(text):
     text = text.lower()
-    text = nltk.word_tokenize(text)
+    text = tokenizer.tokenize(text)
 
     y = []
     for i in text:
