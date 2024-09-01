@@ -1,18 +1,18 @@
 import streamlit as st
 import pickle
 import string
-from nltk.corpus import stopwords
 import nltk
-nltk.download('punkt_tab')
-nltk.download('stopwords')
+nltk.download("punkt_tab")
+nltk.download("stopwords")
+from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
-tokenizer = PunktSentenceTokenizer()
+
 
 def transform_text(text):
     text = text.lower()
-    text = tokenizer.tokenize(text)
+    text = nltk.word_tokenize(text)
 
     y = []
     for i in text:
