@@ -37,28 +37,7 @@ def transform_text(text):
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
-
-def set_bg_hack_url():
-    '''
-    A function to unpack an image from url and set as bg.
-    Returns
-    -------
-    The background.
-    '''
-
-    st.markdown(
-        f"""
-         <style>
-         .stApp {{
-             background: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg");
-             background-size: cover
-         }}
-         </style>
-         """,
-        unsafe_allow_html=True
-    )
-set_bg_hack_url()
-st.title(":rainbow[Email/SMS Spam Classifier]")
+st.title("SpamShield")
 
 input_sms = st.text_area("**Enter the message:**")
 
